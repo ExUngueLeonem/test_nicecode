@@ -1,6 +1,6 @@
 import React from 'react';
-import styles from './ControlPanel.module.scss';
-const ControlPanel = () => {
+import styles from './ControlContent.module.scss';
+const ControlContent = () => {
     return (
         <div className={styles.container}>
             ControlPanel
@@ -8,4 +8,4 @@ const ControlPanel = () => {
     );
 };
 
-export default ControlPanel;
+export default ControlContent;

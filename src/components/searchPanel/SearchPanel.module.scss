@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  gap: 10px;
+}
+
+.button_container {
+  width: 34px;
+  height: 34px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 0;
+  background-color: #F1F2F3;
+}
+
+.filter {
+  justify-self: end;
+}
+
+.add {
+  justify-self: end;
+}
