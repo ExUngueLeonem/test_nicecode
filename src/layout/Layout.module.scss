@@ -1,0 +1,25 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+}
+
+.header {
+  height: 50px;
+}
+
+.space {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  background-color: #efefef;
+}
+
+.content_container {
+  flex-grow: 1;
+  padding-top: 30px;
+  padding-bottom: 119px;
+  max-width: 1140px;
+  margin: 0 auto;
+}
