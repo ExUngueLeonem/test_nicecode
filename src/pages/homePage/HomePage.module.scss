@@ -1,0 +1,21 @@
+.content_layout {
+  display: grid;
+  grid-template-columns: 336px 1fr;
+  grid-gap: 30px;
+  height: 100%;
+  width: 100%;
+}
+
+.left_panel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: stretch;
+}
+
+.right_panel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: stretch;
+}

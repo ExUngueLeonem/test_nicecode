@@ -11,6 +11,7 @@
 
 .space {
   display: flex;
+  align-items: center;
   flex-direction: column;
   flex-grow: 1;
   background-color: #efefef;
@@ -20,6 +21,6 @@
   flex-grow: 1;
   padding-top: 30px;
   padding-bottom: 119px;
-  max-width: 1140px;
-  margin: 0 auto;
+  width: 100%;
+  max-width: 1140px; //margin: 0 auto;
 }
