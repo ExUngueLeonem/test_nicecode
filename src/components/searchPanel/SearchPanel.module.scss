@@ -1,3 +1,5 @@
+@import "style/mixins";
+
 .container {
   display: flex;
   align-items: center;
@@ -9,9 +11,8 @@
   width: 34px;
   height: 34px;
   border-radius: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+  @include center;
   line-height: 0;
   background-color: #F1F2F3;
 }
