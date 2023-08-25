@@ -1,0 +1,43 @@
+@import 'style/_variables.scss';
+
+* {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "SF Pro Display Regular";
+    src: local("SF Pro Display Regular"),
+    url("assets/fonts/SF-Pro-Display-Regular.otf") format("opentype");
+}
+
+*, body {
+    font-family: "SF Pro Display Regular", Arial, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a.active {
+    color: $active_link;
+}
+
+/*scrollbar styling*/
+* {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.3) rgba(0, 0, 0, 0.05);
+}
+
+::-webkit-scrollbar {
+    width: 0.45vw;
+    background-color: rgba(255, 255, 255, 0.06);
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.3);
+}
