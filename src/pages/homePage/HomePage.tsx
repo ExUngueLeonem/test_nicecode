@@ -1,16 +1,18 @@
 import React from 'react';
 import Layout from "layout";
-import styles from './HomePage.module.scss';
 import Block from "components/common/block";
-import UserInfo from "../../components/userInfo";
-import ControlPanel from "../../components/controlPanel";
-import ContentPanel from "../../components/contentPanel";
+import UserInfo from "components/userInfo";
+import SearchPanel from "components/searchPanel";
+import ContentPanel from "components/contentPanel";
+import ControlContent from "components/controlPanel/controlContent";
+import styles from './HomePage.module.scss';
 const HomePage = () => {
     return (
         <Layout>
             <div className={styles.content_layout}>
 
                 <div className={styles.left_panel}>
+                    <SearchPanel/>
                     <Block>
                         asdasd
                     </Block>
@@ -27,7 +29,7 @@ const HomePage = () => {
                 </div>
                 <div className={styles.right_panel}>
                     <UserInfo/>
-                    <ControlPanel/>
+                    <ControlContent/>
                     <ContentPanel/>
                 </div>
             </div>
