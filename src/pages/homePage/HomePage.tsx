@@ -3,10 +3,10 @@ import {observer} from "mobx-react-lite";
 import {clientStore} from "store/clientStore";
 import {Outlet} from "react-router-dom";
 import Layout from "layout";
-import Block from "components/common/block";
 import UserInfo from "components/userInfo";
+import ClientItem from "components/clients/clientItem";
 import SearchPanel from "components/searchPanel";
-
+import PickUpPanel from "components/pickUpPanel";
 import styles from './HomePage.module.scss';
 
 const HomePage = () => {
@@ -24,12 +24,11 @@ const HomePage = () => {
             <div className={styles.content_layout}>
                 <div className={styles.left_panel}>
                     <SearchPanel/>
+                    <PickUpPanel/>
                     <div className={styles.clients_container}>
                         <div className={styles.scroll_container}>
                             {clients && clients.map(item =>
-                                <Block key={item.id}>
-                                    {item.name}
-                                </Block>
+                               <ClientItem key={item.id} item={item}/>
                             )}
                         </div>
                     </div>

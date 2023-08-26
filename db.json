@@ -9,105 +9,120 @@
       "name": "Олег Макаренков",
       "age": 21,
       "sex": "male",
-      "status": "warning"
+      "status": "warning",
+      "image": "https://placehold.co/82x46"
     },
     {
       "id": 2,
       "name": "Наташа Романофф",
       "age": 31,
       "sex": "female",
-      "status": "message"
+      "status": "message",
+      "image": "https://placehold.co/82x46"
     },
     {
       "id": 3,
       "name": "Обычный Саня",
       "age": 25,
       "sex": "male",
-      "status": "message"
+      "status": "ok",
+      "image": "https://placehold.co/82x46"
     },
     {
       "id": 4,
       "name": "Олег Ма каре нков",
       "age": 21,
       "sex": "male",
-      "status": "warning"
+      "status": "ok",
+      "image": "https://placehold.co/82x46"
     },
     {
       "id": 5,
       "name": "Нат аша Ром анофф",
       "age": 31,
       "sex": "female",
-      "status": "message"
+      "status": "ok",
+      "image": "https://placehold.co/82x46"
     },
     {
       "id": 6,
       "name": "Обы чный С123аня",
       "age": 25,
       "sex": "male",
-      "status": "message"
+      "status": "ok",
+      "image": "https://placehold.co/82x46"
     },
     {
       "id": 7,
       "name": "О123лег Мака ренков",
       "age": 21,
       "sex": "male",
-      "status": "warning"
+      "status": "warning",
+      "image": "https://placehold.co/82x46"
     },
     {
       "id": 8,
       "name": "На3таша Рома412нофф",
       "age": 31,
       "sex": "female",
-      "status": "message"
+      "status": "message",
+      "image": "https://placehold.co/82x46"
     },
     {
       "id": 9,
       "name": "Обы412чный Са ня",
       "age": 25,
       "sex": "male",
-      "status": "message"
+      "status": "ok",
+      "image": "https://placehold.co/82x46"
     },
     {
       "id": 10,
       "name": "Олег Мак 123аренков",
       "age": 21,
       "sex": "male",
-      "status": "warning"
+      "status": "warning",
+      "image": "https://placehold.co/82x46"
     },
     {
       "id": 11,
       "name": "На3таша Ром 123анофф",
       "age": 31,
       "sex": "female",
-      "status": "message"
+      "status": "ok",
+      "image": "https://placehold.co/82x46"
     },
     {
       "id": 12,
       "name": "Обы41чный Са1ня",
       "age": 25,
       "sex": "male",
-      "status": "message"
+      "status": "ok",
+      "image": "https://placehold.co/82x46"
     },
     {
       "id": 13,
       "name": "Ол1ег Макар423енков",
       "age": 21,
       "sex": "male",
-      "status": "warning"
+      "status": "warning",
+      "image": "https://placehold.co/82x46"
     },
     {
       "id": 14,
       "name": "На431таша Ро234манофф",
       "age": 31,
       "sex": "female",
-      "status": "message"
+      "status": "message",
+      "image": "https://placehold.co/82x46"
     },
     {
       "id": 15,
       "name": "Обыч2341ный Са1ня",
       "age": 25,
       "sex": "male",
-      "status": "message"
+      "status": "message",
+      "image": "https://placehold.co/82x46"
     }
   ],
   "events": [

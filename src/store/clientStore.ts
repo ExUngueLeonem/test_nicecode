@@ -1,11 +1,11 @@
 import {makeAutoObservable} from "mobx";
 import axiosInstance from "http/axios";
-import {IClients} from "data/IClients";
+import {IClient} from "data/IClient";
 
 class ClientStore {
-    clients: IClients[] = []
+    clients: IClient[] = []
 
-    setClients(clients: IClients[]) {
+    setClients(clients: IClient[]) {
         this.clients = clients
     }
 
@@ -15,7 +15,7 @@ class ClientStore {
 
     async fetchClients() {
         try {
-            const res = await axiosInstance.get<IClients[]>("/clients")
+            const res = await axiosInstance.get<IClient[]>("/clients")
             this.setClients(res.data)
         } catch (e) {
             console.error("fetchClients", e)

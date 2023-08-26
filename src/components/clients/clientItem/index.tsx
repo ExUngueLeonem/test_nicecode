@@ -1,11 +1,34 @@
-import React from 'react';
+import React, {FC} from 'react';
 import Block from "../../common/block";
+import {IClient} from "data/IClient";
+import styles from './ClientItem.module.scss';
 
-const ClientItem = () => {
+interface IProps {
+    item: IClient
+}
+
+const ClientItem: FC<IProps> = ({item}) => {
     return (
-        <Block>
-            ClientItem
-        </Block>
+        <div className={styles.container}>
+            <Block>
+                <div className={styles.content_container}>
+
+                    <div
+                        className={styles.image_container}
+                        style={{backgroundImage: `url(${item.image})`}}
+                    >
+
+                    </div>
+                    <div>
+                        {item.name}
+                    </div>
+                    <div>
+                        icon
+                    </div>
+                </div>
+
+            </Block>
+        </div>
     );
 };
 
