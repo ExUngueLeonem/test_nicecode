@@ -19,3 +19,12 @@
   gap: 10px;
   align-items: stretch;
 }
+
+.clients_container {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.scroll_container {
+  height: 1px;
+}

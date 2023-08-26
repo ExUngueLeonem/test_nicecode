@@ -24,11 +24,15 @@ const HomePage = () => {
             <div className={styles.content_layout}>
                 <div className={styles.left_panel}>
                     <SearchPanel/>
-                    {clients && clients.map(item =>
-                        <Block key={item.id}>
-                            {item.name}
-                        </Block>
-                    )}
+                    <div className={styles.clients_container}>
+                        <div className={styles.scroll_container}>
+                            {clients && clients.map(item =>
+                                <Block key={item.id}>
+                                    {item.name}
+                                </Block>
+                            )}
+                        </div>
+                    </div>
                 </div>
                 <div className={styles.right_panel}>
                     <UserInfo/>
