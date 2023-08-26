@@ -3,6 +3,6 @@ export interface IConsultation {
     date: string;
     text: string;
     images: string;
-
-    type: string;
+    type: "Online консультация" | "Личный прием";
+    "status": "confirmed" | "not confirmed";
 }

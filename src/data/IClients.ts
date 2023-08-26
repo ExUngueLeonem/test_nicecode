@@ -3,4 +3,5 @@ export interface IClients {
     name: string;
     age: number;
     sex: "male" | "female";
+    "status": "warning" | "message";
 }

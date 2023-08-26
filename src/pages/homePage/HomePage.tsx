@@ -3,8 +3,6 @@ import Layout from "layout";
 import Block from "components/common/block";
 import UserInfo from "components/userInfo";
 import SearchPanel from "components/searchPanel";
-import ContentPanel from "components/contentPanel";
-import ControlContent from "components/controlPanel/controlContent";
 import styles from './HomePage.module.scss';
 import {Outlet} from "react-router-dom";
 const HomePage = () => {
@@ -26,7 +24,6 @@ const HomePage = () => {
                     <Block>
                         asdasd
                     </Block>
-
                 </div>
                 <div className={styles.right_panel}>
                     <UserInfo/>
