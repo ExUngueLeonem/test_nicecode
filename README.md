@@ -1,10 +1,13 @@
 ## Подготовка
+
 npm i
+
 npm i -g json-server
 
 ## Запуск проекта 
 
 npm start
+
 json-server --watch db.json --port 3001
 
 ## Тестовое задание. Вакансия “Frontend-разработчик (https://rostov.hh.ru/vacancy/85671476?hhtmFrom=employer_vacancies)”
