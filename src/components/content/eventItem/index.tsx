@@ -1,30 +1,35 @@
-import React from 'react';
-import styles from './EventItem.module.scss';
+import React, {FC} from 'react';
+import {IEvent} from "data/IEvent";
 import ContentItemWrapper from "../contentItemWrapper";
-import mockImage from 'assets/images/mock/video.png';
+import styles from './EventItem.module.scss';
 
-const EventItem = () => {
+interface IProps {
+    item: IEvent
+}
+
+const EventItem: FC<IProps> = ({item}) => {
     return (
         <ContentItemWrapper>
             <div
                 className={styles.image_container}
-                style={{backgroundImage: `url(${mockImage})`}}
+                style={{backgroundImage: `url(${item.image})`}}
             >
             </div>
 
             <div className={styles.content_container}>
                 <div>
-                    Тяга резинки в шаге со сгибанием локтя под 90 градусов
+                    {item.text}
                 </div>
                 <div className={styles.info_container}>
                     <div>
-                        Вебинар
+                        {item.type === "webinar" && "Вебинар"}
+                        {item.type === "ne webinar" && "не вебинар)"}
                     </div>
                     <div className={styles.date}>
-                        15.01.2019
+                        {item.date}
                     </div>
                     <div className={styles.date}>
-                        12:30-13:00
+                        {item.date}
                     </div>
                 </div>
             </div>

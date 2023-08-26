@@ -1,27 +1,32 @@
-import React from 'react';
-import styles from './VideoItem.module.scss';
+import React, {FC} from 'react';
+import {IVideo} from "data/IVideo";
 import ContentItemWrapper from "../contentItemWrapper";
-import mockImage from 'assets/images/mock/video.png';
+import styles from './VideoItem.module.scss';
 
-const VideoItem = () => {
+interface IProps {
+    item: IVideo;
+}
+
+const VideoItem: FC<IProps> = ({item}) => {
+
     return (
         <ContentItemWrapper>
             <div
                 className={styles.image_container}
-                style={{backgroundImage: `url(${mockImage})`}}
+                style={{backgroundImage: `url(${item.image})`}}
             >
             </div>
 
             <div className={styles.content_container}>
                 <div>
-                    Крабик, ходьба в бок в приседе с двумя резинками Кра…
+                    {item.text}
                 </div>
                 <div className={styles.info_container}>
                     <div>
-                        Астахова Е.В.
+                        {item.authorName}
                     </div>
                     <div className={styles.date}>
-                        15.01.2019, 12:30-13:00
+                        {item.date}
                     </div>
                 </div>
             </div>

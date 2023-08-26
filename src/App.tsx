@@ -1,10 +1,10 @@
 import React from 'react';
 import {Navigate, Route, Routes} from "react-router-dom";
+import Video from "pages/homePage/content/Video";
+import Notes from "pages/homePage/content/Notes";
+import Events from "pages/homePage/content/Events";
 import HomePage from "pages/homePage/HomePage";
-import Notes from "./pages/homePage/content/Notes";
-import Consultation from "./pages/homePage/content/Consultation";
-import Video from "./pages/homePage/content/Video";
-import Events from "./pages/homePage/content/Events";
+import Consultation from "pages/homePage/content/Consultation";
 import './App.scss';
 
 function App() {

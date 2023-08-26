@@ -1,9 +1,14 @@
-import React from 'react';
-import styles from './ConsultationItem.module.scss';
-import {BsCameraVideoFill} from "react-icons/bs";
+import React, {FC} from 'react';
+import {IConsultation} from "data/IConsultation";
 import ContentItemWrapper from "../contentItemWrapper";
+import {BsCameraVideoFill} from "react-icons/bs";
+import styles from './ConsultationItem.module.scss';
 
-const ConsultationItem = () => {
+interface IProps {
+    item: IConsultation
+}
+
+const ConsultationItem: FC<IProps> = ({item}) => {
     return (
         <ContentItemWrapper>
             <div className={styles.image_container}>
@@ -12,14 +17,14 @@ const ConsultationItem = () => {
 
             <div className={styles.content_container}>
                 <div>
-                    Online консультация
+                    {item.type}
                 </div>
                 <div className={styles.info_container}>
                     <div className={styles.date}>
-                        15.01.2019, 12:30-13:00
+                        {item.date}
                     </div>
                     <div className={styles.status}>
-                        Не подтверждена
+                        {item.status !== "confirmed" && "Не подтверждена"}
                     </div>
                 </div>
             </div>

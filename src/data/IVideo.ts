@@ -4,4 +4,5 @@ export interface IVideo {
     text: string;
     image: string;
     videoUrl: string;
+    authorName: string;
 }

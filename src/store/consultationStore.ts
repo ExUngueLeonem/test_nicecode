@@ -1,11 +1,25 @@
 import {makeAutoObservable} from "mobx";
-import {IConsultation} from "../data/IConsultation";
+import axiosInstance from "http/axios";
+import {IConsultation} from "data/IConsultation";
 
 class ConsultationStore {
-    clients: IConsultation[] = []
+    consultations: IConsultation[] = []
+
+    setConsultations(consultations: IConsultation[]) {
+        this.consultations = consultations
+    }
 
     constructor() {
         makeAutoObservable(this, {}, { autoBind: true })
+    }
+
+    async fetchConsultations() {
+        try {
+            const res = await axiosInstance.get<IConsultation[]>("/consultations")
+            this.setConsultations(res.data)
+        } catch (e) {
+            console.error("fetchClients", e)
+        }
     }
 }
 

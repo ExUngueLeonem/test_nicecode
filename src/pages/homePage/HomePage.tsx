@@ -1,29 +1,34 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import {observer} from "mobx-react-lite";
+import {clientStore} from "store/clientStore";
+import {Outlet} from "react-router-dom";
 import Layout from "layout";
 import Block from "components/common/block";
 import UserInfo from "components/userInfo";
 import SearchPanel from "components/searchPanel";
+
 import styles from './HomePage.module.scss';
-import {Outlet} from "react-router-dom";
+
 const HomePage = () => {
+    const clients = clientStore.clients
+
+    useEffect(() => {
+        clientStore.fetchClients()
+            .finally(/*TODO loading*/)
+    }, [])
+
+    /*TODO получение юзера*/
+
     return (
         <Layout>
             <div className={styles.content_layout}>
-
                 <div className={styles.left_panel}>
                     <SearchPanel/>
-                    <Block>
-                        asdasd
-                    </Block>
-                    <Block>
-                        asdasd
-                    </Block>
-                    <Block>
-                        asdasd
-                    </Block>
-                    <Block>
-                        asdasd
-                    </Block>
+                    {clients && clients.map(item =>
+                        <Block key={item.id}>
+                            {item.name}
+                        </Block>
+                    )}
                 </div>
                 <div className={styles.right_panel}>
                     <UserInfo/>
@@ -34,4 +39,4 @@ const HomePage = () => {
     );
 };
 
-export default HomePage;
+export default observer(HomePage);
