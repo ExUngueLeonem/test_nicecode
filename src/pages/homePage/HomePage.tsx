@@ -6,6 +6,7 @@ import SearchPanel from "components/searchPanel";
 import ContentPanel from "components/contentPanel";
 import ControlContent from "components/controlPanel/controlContent";
 import styles from './HomePage.module.scss';
+import {Outlet} from "react-router-dom";
 const HomePage = () => {
     return (
         <Layout>
@@ -29,8 +30,7 @@ const HomePage = () => {
                 </div>
                 <div className={styles.right_panel}>
                     <UserInfo/>
-                    <ControlContent/>
-                    <ContentPanel/>
+                    <Outlet/>
                 </div>
             </div>
         </Layout>

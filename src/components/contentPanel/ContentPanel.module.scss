@@ -1,4 +1,15 @@
+@import "style/variables";
+
 .container {
   background-color: white;
   flex-grow: 1;
+  padding: 15px;
+
+  color: $text_content;
+  overflow-y: auto;
+  max-height: fit-content;
+}
+
+.scroll_container {
+  height: 1px;
 }

@@ -1,10 +1,16 @@
-import React from 'react';
+import React, {FC, ReactNode} from 'react';
 import styles from './ContentPanel.module.scss';
 
-const ContentPanel = () => {
+interface IProps {
+    children: ReactNode;
+}
+
+const ContentPanel: FC<IProps> = ({children}) => {
     return (
         <div className={styles.container}>
-            ContentPanel
+            <div  className={styles.scroll_container}>
+                {children}
+            </div>
         </div>
     );
 };
