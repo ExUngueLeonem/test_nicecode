@@ -1,9 +1,9 @@
 import React, {useEffect} from 'react';
-import ControlContent from "components/controlPanel/controlContent";
-import ContentPanel from "components/contentPanel";
-import EventItem from "components/content/eventItem";
-import {eventStore} from "store/eventStore";
 import {observer} from "mobx-react-lite";
+import {eventStore} from "store/eventStore";
+import EventItem from "components/content/eventItem";
+import ContentPanel from "components/contentPanel";
+import ControlContent from "components/controlPanel/controlContent";
 
 const Events = () => {
     const events = eventStore.events

@@ -1,4 +1,5 @@
 import React, {useEffect} from 'react';
+import {observer} from "mobx-react-lite";
 import {videoStore} from "store/videoStore";
 import VideoItem from "components/content/videoItem";
 import ContentPanel from "components/contentPanel";
@@ -24,4 +25,4 @@ const Video = () => {
     );
 };
 
-export default Video;
+export default observer(Video);

@@ -1,8 +1,9 @@
 import React, {useEffect} from 'react';
-import ControlContent from "components/controlPanel/controlContent";
-import ContentPanel from "components/contentPanel";
+import {observer} from "mobx-react-lite";
+import {noteStore} from "store/noteStore";
 import NotePost from "components/content/notePost";
-import {noteStore} from "../../../store/noteStore";
+import ContentPanel from "components/contentPanel";
+import ControlContent from "components/controlPanel/controlContent";
 
 const Notes = () => {
     const notes = noteStore.notes
@@ -24,4 +25,4 @@ const Notes = () => {
     );
 };
 
-export default Notes;
+export default observer(Notes);
