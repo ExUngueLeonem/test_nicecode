@@ -1,3 +1,5 @@
+@import "style/variables";
+@import "style/mixins";
 .container {
   height: 30px;
   display: flex;
@@ -7,4 +9,35 @@
   padding-right: 10px;
 
   gap: 10px;
+
+  color: $text_content_highlight;
+}
+
+.count {
+  @include center;
+
+  font-size: 12px;
+  color: white;
+  padding: 2px 5px;
+  border-radius: 30px;
+  background-color: $active_link;
+  line-height: 1;
+}
+
+.count.highlight {
+  font-size: 12px;
+  color: white;
+  padding: 2px 4px;
+  border-radius: 30px;
+  background-color: $active_link;
+}
+
+.client_length {
+  @include center;
+  font-size: 12px;
+  color: white;
+  padding: 2px 5px;
+  border-radius: 30px;
+  background-color: $text_content_highlight;
+  line-height: 1;
 }
