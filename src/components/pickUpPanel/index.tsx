@@ -17,18 +17,23 @@ const PickUpPanel = () => {
         <div className={styles.container}>
             {isPickUp ?
                 <>
-                    <div><input type={"checkbox"} onChange={e => onAllPickHandler(e.target.checked)}/></div>
+                    <div>
+                        <input
+                            className={styles.clickable}
+                            type={"checkbox"}
+                            onChange={e => onAllPickHandler(e.target.checked)}/>
+                    </div>
                     <div> Все</div>
                     {count ? <div className={styles.count}>{count}</div> : <></>}
                     <Spacer/>
-                    <div> Действия</div>
-                    <div onClick={() => picKUpHandler(false)}> Отменить</div>
+                    <div className={styles.clickable}>Действия</div>
+                    <div onClick={() => picKUpHandler(false)} className={styles.clickable}>Отменить</div>
                 </>
                 :
                 <>
                     <div className={styles.client_length}> {clients.length} </div>
                     <Spacer/>
-                    <div onClick={() => picKUpHandler(true)}> Выбрать</div>
+                    <div onClick={() => picKUpHandler(true)} className={styles.clickable}> Выбрать</div>
                 </>
             }
         </div>

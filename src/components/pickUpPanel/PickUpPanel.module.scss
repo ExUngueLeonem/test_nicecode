@@ -13,6 +13,10 @@
   color: $text_content_highlight;
 }
 
+.clickable {
+  cursor: pointer;
+}
+
 .count {
   @include center;
 

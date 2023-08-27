@@ -12,6 +12,10 @@
   height: 34px;
 
   @include center;
+  svg {
+    width: 25px;
+    height: 25px;
+  }
 }
 
 .image_container {
