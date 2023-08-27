@@ -4,13 +4,12 @@ import {clientStore} from "store/clientStore";
 import {Outlet} from "react-router-dom";
 import Layout from "layout";
 import UserInfo from "components/userInfo";
-import ClientItem from "components/clients/clientItem";
+import ClientList from "components/clients/clientList";
 import SearchPanel from "components/searchPanel";
 import PickUpPanel from "components/pickUpPanel";
 import styles from './HomePage.module.scss';
 
 const HomePage = () => {
-    const clients = clientStore.clients
 
     useEffect(() => {
         clientStore.fetchClients()
@@ -27,9 +26,7 @@ const HomePage = () => {
                     <PickUpPanel/>
                     <div className={styles.clients_container}>
                         <div className={styles.scroll_container}>
-                            {clients && clients.map(item =>
-                               <ClientItem key={item.id} item={item}/>
-                            )}
+                            <ClientList/>
                         </div>
                     </div>
                 </div>

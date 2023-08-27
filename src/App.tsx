@@ -12,10 +12,10 @@ function App() {
    <Routes>
        <Route path={"/"} element={<Navigate to="/notes" />} />
        <Route path={"/"} element={<HomePage/>}>
-           <Route path={"/notes"} element={<Notes/>}/>
-           <Route path={"/consultation"} element={<Consultation/>}/>
-           <Route path={"/video"} element={<Video/>}/>
-           <Route path={"/events"} element={<Events/>}/>
+           <Route path={"notes"} element={<Notes/>}/>
+           <Route path={"consultation"} element={<Consultation/>}/>
+           <Route path={"video"} element={<Video/>}/>
+           <Route path={"events"} element={<Events/>}/>
        </Route>
    </Routes>
   );
