@@ -5,6 +5,11 @@ import EventItem from "components/content/eventItem";
 import ContentPanel from "components/contentPanel";
 import ControlContent from "components/controlPanel/controlContent";
 
+const button = {
+    text: "Рекомендовать",
+    onClick: () => console.log("Рекомендовать"),
+}
+
 const Events = () => {
     const events = eventStore.events
 
@@ -15,7 +20,7 @@ const Events = () => {
 
     return (
         <>
-            <ControlContent/>
+            <ControlContent button={button}/>
             <ContentPanel>
                 {events && events.map(item =>
                     <EventItem key={item.id} item={item} />

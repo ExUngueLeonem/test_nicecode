@@ -5,6 +5,11 @@ import ContentPanel from "components/contentPanel";
 import ControlContent from "components/controlPanel/controlContent";
 import ConsultationItem from "components/content/consultationItem";
 
+const button = {
+    text: "Записать",
+    onClick: () => console.log("Записать"),
+}
+
 const Consultation = () => {
     const consultations = consultationStore.consultations
 
@@ -15,7 +20,7 @@ const Consultation = () => {
 
     return (
         <>
-            <ControlContent/>
+            <ControlContent button={button}/>
             <ContentPanel>
                 {consultations && consultations.map(item =>
                     <ConsultationItem key={item.id} item={item}/>
