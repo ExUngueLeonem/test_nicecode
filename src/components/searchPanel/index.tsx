@@ -24,10 +24,10 @@ const SearchPanel = () => {
             <div className={styles.container}>
                 {isOpened ?
                     <>
-                        <div className={styles.button_container}>
-                            <BsSearch/>
-                        </div>
-                        <div>
+                        <div className={styles.search_input}>
+                            <div className={styles.button_container}>
+                                <BsSearch/>
+                            </div>
                             <input
                                 type={"text"}
                                 value={filterString}

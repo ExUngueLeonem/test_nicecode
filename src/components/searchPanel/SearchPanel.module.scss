@@ -1,10 +1,33 @@
 @import "style/mixins";
+@import "style/variables";
 
 .container {
   display: flex;
   align-items: center;
   height: 100%;
   gap: 10px;
+}
+
+.search_input {
+  flex-grow: 1;
+  position: relative;
+  input {
+    border: 1px solid $text_content;
+    border-radius: 50px;
+    padding: 10px 10px 10px 45px;
+    width: 100%;
+  }
+  .button_container {
+    position: absolute;
+    left: 17px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    &:hover {
+      background-color: inherit;
+      color: inherit;
+    }
+  }
 }
 
 .button_container {
@@ -15,6 +38,13 @@
   @include center;
   line-height: 0;
   background-color: #F1F2F3;
+
+  transition: all 0.2s;
+  &:hover {
+    background-color: $active_link;
+    color: white;
+    transition: all 0.2s;
+  }
 }
 
 .filter {
