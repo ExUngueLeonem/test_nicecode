@@ -4,12 +4,10 @@ import {clientStore} from "store/clientStore";
 import ClientItem from "../clientItem";
 
 const ClientList = () => {
-    const clients = clientStore.clients
+    const filteredClients = clientStore.filteredClients
     return (
         <>
-            {clients && clients.map(item =>
-                <ClientItem key={item.id} item={item}/>
-            )}
+            {filteredClients && filteredClients.map(item => <ClientItem key={item.id} item={item}/>)}
         </>
     );
 };

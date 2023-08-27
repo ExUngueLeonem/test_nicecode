@@ -9,25 +9,44 @@ class ClientStore {
 
     isPickUp: boolean = false;
 
+    filterString: string = ""
+
+    get filteredClients() {
+        return this.clients.filter(item =>
+            this.filterString.length >= 2 ? item.name.toLowerCase().includes(this.filterString.toLowerCase()) : true
+        )
+    }
+
     get checkedClientsCount() {
         return this.clients.reduce((a, b) => a + (b.checked ? 1 : 0), 0)
     }
 
     setIsPickUp(isPickUp: boolean) {
-        if (!isPickUp) this.clients = this.clients.map( item => ({...item, checked: false}))
+        if (!isPickUp) this.clients = this.clients.map(item => ({...item, checked: false}))
         this.isPickUp = isPickUp
     }
 
     setClientChecked(id: string, checked: boolean) {
-        this.clients = this.clients.map( item => item.id === id ? {...item, checked } : item)
+        this.clients = this.clients.map(item => item.id === id ? {...item, checked} : item)
     }
 
     setAllClientsChecked(checked: boolean) {
-        this.clients = this.clients.map(item => ({...item, checked}))
+        if (checked) {
+            const checkedClientsDict: { [key: string]: boolean } = {}
+            this.filteredClients.forEach(item => checkedClientsDict[item.id] = true)
+            this.clients = this.clients.map(item => (checkedClientsDict[item.id] ? {...item, checked} : {...item, checked: false}))
+            console.log(checkedClientsDict)
+        } else {
+            this.clients = this.clients.map(item => ({...item, checked}))
+        }
     }
 
     setClients(clients: IClientStore[]) {
         this.clients = clients
+    }
+
+    setFilterString(filterString: string) {
+        this.filterString = filterString
     }
 
     constructor() {
