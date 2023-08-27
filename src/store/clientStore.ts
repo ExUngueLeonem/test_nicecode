@@ -9,7 +9,17 @@ class ClientStore {
 
     isPickUp: boolean = false;
 
-    filterString: string = ""
+    filterString: string = "";
+
+    activeClientId: string = "";
+
+    get activeClient() {
+        return this.clients.find(item => item.id === this.activeClientId)
+    }
+
+    setActiveClientId(activeClientId: string) {
+        this.activeClientId = activeClientId
+    }
 
     get filteredClients() {
         return this.clients.filter(item =>
@@ -34,7 +44,10 @@ class ClientStore {
         if (checked) {
             const checkedClientsDict: { [key: string]: boolean } = {}
             this.filteredClients.forEach(item => checkedClientsDict[item.id] = true)
-            this.clients = this.clients.map(item => (checkedClientsDict[item.id] ? {...item, checked} : {...item, checked: false}))
+            this.clients = this.clients.map(item => (checkedClientsDict[item.id] ? {...item, checked} : {
+                ...item,
+                checked: false
+            }))
             console.log(checkedClientsDict)
         } else {
             this.clients = this.clients.map(item => ({...item, checked}))

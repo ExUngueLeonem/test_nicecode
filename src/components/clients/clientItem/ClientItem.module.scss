@@ -2,16 +2,30 @@
 
 .container {
   margin-bottom: 10px;
-  &.active {
+
+  height: 60px;
+  background-color: white;
+  border-radius: 5px;
+
+  &.active_message {
     border-left: 2px solid $active_link;
   }
+
 }
 
 .content_container {
+  box-sizing: border-box;
   display: grid;
+  padding: 10px;
   grid-template-columns: auto 40px 1fr 40px;
   grid-gap: 10px;
   align-items: center;
+  background-color: rgba(255, 255, 255, 0);
+
+  &.active {
+    background-color: #ececec;
+    border: 1px solid white;
+  }
 }
 
 .image_container {

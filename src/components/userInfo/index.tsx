@@ -1,19 +1,27 @@
 import React from 'react';
-import styles from './UserInfo.module.scss'
-import userImg from 'assets/images/mock/user.png'
+import {clientStore} from "store/clientStore";
 import {BsThreeDots} from "react-icons/bs";
+import styles from './UserInfo.module.scss'
+import {observer} from "mobx-react-lite";
 
 const UserInfo = () => {
+    const item = clientStore.activeClient
     return (
         <div className={styles.container}>
             <div
                 className={styles.user_image}
-                style={{backgroundImage: `url(${userImg})`}}
+                style={{backgroundImage: `url(${item?.image})`}}
             >
             </div>
             <div className={styles.content}>
-                Рожков Денис Петрович
-                30 лет, муж
+                <div className={styles.name}>
+                    {item?.name}
+                </div>
+                <div>
+                    {item?.age}
+                    {item?.sex === "male" && " муж."}
+                    {item?.sex === "female" && " жен."}
+                </div>
             </div>
             <div className={styles.button_container}>
                 <BsThreeDots/>
@@ -22,4 +30,4 @@ const UserInfo = () => {
     );
 };
 
-export default UserInfo;
+export default observer(UserInfo);

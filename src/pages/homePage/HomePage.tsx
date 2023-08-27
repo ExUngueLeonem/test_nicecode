@@ -13,10 +13,9 @@ const HomePage = () => {
 
     useEffect(() => {
         clientStore.fetchClients()
+            .then(() => clientStore.setActiveClientId(clientStore.clients?.[0].id || ""))
             .finally(/*TODO loading*/)
     }, [])
-
-    /*TODO получение юзера*/
 
     return (
         <Layout>
