@@ -1,8 +1,11 @@
 import React, {FC} from 'react';
-import Block from "../../common/block";
-import styles from './ClientItem.module.scss';
-import {clientStore, IClientStore} from "store/clientStore";
 import {observer} from "mobx-react-lite";
+import {clientStore, IClientStore} from "store/clientStore";
+import classNames from "classnames";
+import Block from "../../common/block";
+import {LiaTelegram} from "react-icons/lia";
+import {IoWarningOutline} from "react-icons/io5";
+import styles from './ClientItem.module.scss';
 
 interface IProps {
     item: IClientStore
@@ -14,7 +17,7 @@ const ClientItem: FC<IProps> = ({item}) => {
         clientStore.setClientChecked(item.id, checked)
     }
     return (
-        <div className={styles.container}>
+        <div className={classNames(styles.container, {[styles.active]: item.status === "message"} )}>
             <Block>
                 <div className={styles.content_container}>
                     <div>
@@ -29,8 +32,9 @@ const ClientItem: FC<IProps> = ({item}) => {
                     <div>
                         {item.name}
                     </div>
-                    <div>
-                        icon
+                    <div className={styles.icon}>
+                        {item.status === "message" && <LiaTelegram className={styles.message}/>}
+                        {item.status === "warning" && <IoWarningOutline className={styles.warning}/>}
                     </div>
                 </div>
 
