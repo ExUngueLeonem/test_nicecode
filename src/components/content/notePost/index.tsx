@@ -1,19 +1,20 @@
 import React, {FC} from 'react';
 import styles from './NotePost.module.scss';
 import {BsThreeDots} from "react-icons/bs";
-import mockImage from 'assets/images/mock/content.png'
 import {INote} from "data/INote";
+import moment from "moment/moment";
 
 interface IProps {
     item: INote
 }
 
 const NotePost: FC<IProps> = ({item}) => {
+    const date = moment(item.date).format("DD.MM.YYYY")
     return (
         <div className={styles.container}>
             <div>
                 <p>
-                    <span className={styles.data}>{item.date} </span>
+                    <span className={styles.data}>{date} </span>
                     {item.text}
                 </p>
 
