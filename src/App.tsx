@@ -8,6 +8,7 @@ import Consultation from "pages/homePage/content/Consultation";
 import './App.scss';
 
 function App() {
+  //master
   return (
    <Routes>
        <Route path={"/"} element={<Navigate to="/notes" />} />
