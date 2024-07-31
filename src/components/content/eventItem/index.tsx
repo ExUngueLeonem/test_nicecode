@@ -2,12 +2,15 @@ import React, {FC} from 'react';
 import {IEvent} from "data/IEvent";
 import ContentItemWrapper from "../contentItemWrapper";
 import styles from './EventItem.module.scss';
+import moment from "moment";
 
 interface IProps {
     item: IEvent
 }
 
 const EventItem: FC<IProps> = ({item}) => {
+    const date = moment(item.date).format("DD.MM.YYYY");
+    const time = moment(item.date).format("hh:mm");
     return (
         <ContentItemWrapper>
             <div
@@ -26,10 +29,10 @@ const EventItem: FC<IProps> = ({item}) => {
                         {item.type === "ne webinar" && "не вебинар)"}
                     </div>
                     <div className={styles.date}>
-                        {item.date}
+                        {date}
                     </div>
                     <div className={styles.date}>
-                        {item.date}
+                        {time}
                     </div>
                 </div>
             </div>

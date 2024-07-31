@@ -2,13 +2,14 @@ import React, {FC} from 'react';
 import {IVideo} from "data/IVideo";
 import ContentItemWrapper from "../contentItemWrapper";
 import styles from './VideoItem.module.scss';
+import moment from "moment/moment";
 
 interface IProps {
     item: IVideo;
 }
 
 const VideoItem: FC<IProps> = ({item}) => {
-
+    const date = moment(item.date).format("DD.MM.YYYY");
     return (
         <ContentItemWrapper>
             <div
@@ -26,7 +27,7 @@ const VideoItem: FC<IProps> = ({item}) => {
                         {item.authorName}
                     </div>
                     <div className={styles.date}>
-                        {item.date}
+                        {date}
                     </div>
                 </div>
             </div>

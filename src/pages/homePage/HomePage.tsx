@@ -13,7 +13,7 @@ const HomePage = () => {
 
     useEffect(() => {
         clientStore.fetchClients()
-            .then(() => clientStore.setActiveClientId(clientStore.clients?.[0].id || ""))
+            .then(() => clientStore.setActiveClientId(clientStore.clients?.[0]?.id || ""))
             .finally(/*TODO loading*/)
     }, [])
 
