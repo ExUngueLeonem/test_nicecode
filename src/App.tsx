@@ -10,6 +10,7 @@ import './App.scss';
 function App() {
  //AAAAAAA
   //BBBBBB
+  //master
   return (
    <Routes>
        <Route path={"/"} element={<Navigate to="/notes" />} />
